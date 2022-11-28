@@ -1,0 +1,240 @@
+
+.search-div{
+    width: 100%;
+    /* background: ; */
+    margin-top: -150px;
+    /* position:sticky;
+    top: 0px; */
+    /* z-index: 4; */
+    /* padding: 40px; */
+    /* padding: auto;  */
+    display: flex;
+    justify-content: center;
+    height: 250px;
+}
+
+.ticket-bg{
+    width: 70%;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    /* opacity: 1; */
+    /* margin: auto; */
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    
+}
+.ticket-bg::before{
+    background: rgba(0,18,50,0.2);
+    opacity: 0.8;
+    /* position: absolute; */
+    top:0;
+    left: 0;
+    content: "";
+    bottom: 0;
+    right: 0;
+}
+
+.welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    z-index: 3;
+    width: 100%;
+    
+    /* z-index: 4; */
+    /* width: 80%;
+    height: 80%; */
+}
+.quote{
+    /* width: 50%; */
+}
+.quote h3,h2{
+    margin: 10px; 
+}
+.quote > div{
+    width: 100px;
+    
+    margin-left: auto;
+    height: 50px;
+     background-image: -webkit-linear-gradient(169deg, #ff4343 0%, #aa52a1 37%, #5560ff 83%);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 25px;
+     padding: 2px 20px;
+     
+}
+.quote span{
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.black{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    background-color: rgba(0,0,0,0.3);
+    height: 90px;
+    margin-top: 30px;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    position: relative
+}
+.search input{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #9eb1eb;
+    width: 100%;
+    outline: none;
+    color: white;
+    padding-bottom: 6px;
+    font-size: 16px;
+}
+.search input::selection{
+    /* ou */
+}
+.keyResu a{
+    text-decoration:none;
+    color: white;
+}
+.keyResu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    background-color: #3f2f87;
+    
+
+}
+.absRes{
+    padding: 10px 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.city{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.city div{
+    display: flex;
+    align-items: center;
+}
+.city span{
+    padding-left: 5px;
+}
+.city select{
+    margin-left: 10px;
+    z-index: 7;
+}
+
+@media screen and (max-width: 900px) and (min-width: 600px){
+    .search-div{
+        height: 200px;
+        box-sizing: border-box;
+        padding: 10px;
+        display: flex;
+    }
+    .ticket-bg{
+        height: 100%;
+        width: 80%;
+        box-sizing: border-box;
+
+    }
+    .quote h3{
+        font-size: 16px;
+        margin: 0px;
+
+    }
+    .quote h2{
+        font-size: 18px;
+    }
+    .quote > div{
+        width: 70px;
+        height: 35px;
+    }
+    .quote span{
+        font-size: 18px;
+    }
+    .quote img{
+        width: 30px;
+    }
+    .black{
+        width: 100%;
+        padding: 0px 10px;
+    }
+    .black span{
+        font-size: 14px;
+    }
+    .cityImg img{
+          width: 30px;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width:600px){
+    .search-div{
+        margin-top: -100px;
+        height: 150px;
+
+    }
+    .ticket-bg{
+        width: 90%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .quote h3{
+        margin: 0px;
+    }
+    .quote h3{
+        font-size: 15px;
+    }
+    .quote h2{
+        font-size: 17px;
+    }
+    .quote > div{
+        width: 70px;
+        height: 35px;
+    }
+    .quote img{
+        width: 30px;
+    }
+    .quote span{
+        font-size: 16px;
+    }
+    .welcome{
+        width: 100%;
+    }
+    .black{
+        margin-top: 20px;
+        width: 100%;
+        flex-direction: column;
+    }
+    .cityImg img{
+        width: 30px;
+    }
+    .cityImg span{
+        font-size: 15px;
+    }
+    .search{
+        order:2;
+        width: 90%;
+    }
+
+
+}

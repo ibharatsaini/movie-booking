@@ -1,0 +1,125 @@
+.movieDiv{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 350px;
+    flex-direction: row;
+    margin-bottom: 50px;
+    /* max-width: 700px; */
+}
+
+.movImg{
+   display: flex; 
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   width: 250px;
+}
+
+.movImg img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.desc{
+    width: 100%;
+    height: 100%;
+    padding-left: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+.desc h2{
+    font-size: 25px;
+    color: white;
+    margin-left: 0px;
+    margin-top: 0px
+}
+.desc h4{
+    color: #31d7a9;
+    font-weight: 400;
+}
+.fav{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    color: whitesmoke;
+    margin-top: 30px;
+    height: 50px;
+}
+.like{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.like span{
+    margin-left: 10px;
+}
+.genre{
+    color: whitesmoke;
+    text-transform: capitalize;
+}
+.genre insert{
+    margin: 10px;
+}
+.release{
+    margin-top: 10px;
+}
+.release span{
+    color: white;
+}
+.release insert{
+    color: whitesmoke;
+}
+.tix{
+    margin-top: auto;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.4px solid gainsboro;
+    border-bottom: 0.4px solid gainsboro;
+    padding: 10px 0px;
+}
+.op{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #31d7a9;
+    width: 130px;
+    color: white;
+    background-color: #0a1e5e;
+
+}
+.op a{
+    color: white;
+}
+
+@media screen and (max-width:600px) and (min-width: 350px) {
+    .movieDiv{
+        height: 250px;
+    }
+    .desc{
+        padding-left: 20px;
+    }
+    .desc h4{
+        margin: 5px 0px;
+    }
+    .moviesDiv{
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .tix{
+        height: 40px;
+        box-sizing: border-box;
+        padding: 5px 0px;
+    }
+    .fav img{
+        width: 15px;
+    }
+    .fav{
+        font-size: 14px;
+    }
+    
+}

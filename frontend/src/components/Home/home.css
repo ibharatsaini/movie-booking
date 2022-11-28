@@ -1,0 +1,198 @@
+
+.latestMovie{
+    /* height: 1200px; */
+    max-width: 1200px;
+    /* background-color: #5560ff; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 100px auto;
+    /* gap: 100px; */
+}
+
+.head{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: ; */
+
+}
+.movies{
+    /* width: 80%; */
+}
+
+.sideDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 30px 20px; */
+}
+.sideDiv section{
+      padding: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border:1px solid #1a2a47;
+       box-sizing: border-box;
+}
+
+.sideDiv span{
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+.filmGenre{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    /* width: 80%; */
+}
+
+.fge{
+    width: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.fge a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    /* padding-right: 10px; */
+    /* margin-right: 10px; */
+    /* box-sizing: border-box; */
+}
+.comRom a{
+    text-decoration: none;
+    color: white;
+}
+.firDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.fge section{
+    font-size: 30px;
+    text-align: left;
+    border-bottom: 2px solid green;
+    padding-bottom: 10px;
+    /* width: 100%; */
+    /* padding-left: 50px; */
+}
+.comRom{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    /* height: 00px; */
+    width: 100%;
+    height: 100%;
+}
+.film{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    width: 230px;
+    height: 450px;
+    background-color: #032055;
+}
+
+.filImg{
+    display: flex;
+    width: 100%;
+    height: 75%;
+    justify-content: center;
+    align-items: center;
+}
+.filImg img{
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+.secTitle{
+    font-size: 20px;
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    border-bottom: 1px dashed #11326f;
+}
+.secLike{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.secRat{
+    display: flex;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+}
+.secRat img{
+    margin-right: 10px;
+}
+.fge insert{
+    /* margin-top: 10px; */
+    border-bottom: 0.1px solid #11326f;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 900px) and (min-width: 600px){
+   
+    .head{
+        display: none;
+    }
+    .film{
+        width: 200px;
+        height: 400px;
+    }
+    .secTitle{
+        padding: 15px 10px;
+        text-transform: capitalize;
+    }
+    .filmGenre{
+        gap: 20px
+    }
+
+}
+@media screen and (max-width: 600px) and (min-width: 350px){
+    .latestMovie{
+        flex-direction: column;
+    }
+
+    .head{
+        order:2;
+        display: none;
+        
+    }
+    .comRom{
+        padding: 0px 10px;
+        box-sizing: border-box;
+    }
+    .comRom a{
+        width: 160px;
+        height: 350px;
+        box-sizing: border-box;
+    }
+    .secTitle{
+        padding: 10px 10px;
+        box-sizing: border-box;
+    }
+}
