@@ -33,7 +33,8 @@
     font-size: 25px;
     color: white;
     margin-left: 0px;
-    margin-top: 0px
+    margin-top: 0px;
+    text-transform: capitalize;
 }
 .desc h4{
     color: #31d7a9;
@@ -98,13 +99,25 @@
 
 @media screen and (max-width:600px) and (min-width: 350px) {
     .movieDiv{
-        height: 250px;
+       max-height: 200px;
+    }
+    .movImg{
+        min-width: 80px;
+    }
+    .desc h2{
+        font-size: 20px;
+        
     }
     .desc{
-        padding-left: 20px;
+        padding-left: 10px;
+    }
+    .genre span{
+        font-size: 15px;
     }
     .desc h4{
         margin: 5px 0px;
+        font-size: 13px;
+        font-size: 14px;
     }
     .moviesDiv{
         padding: 10px;
@@ -120,6 +133,18 @@
     }
     .fav{
         font-size: 14px;
+        margin: 10px 0px 10px 0px;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .fav div:nth-child(2){
+        margin-left: 15px;
+    }
+    .like span{
+        margin-left: 5px;
+    }
+    .tix a{
+        font-size: 15px;
     }
     
 }

@@ -29,7 +29,7 @@ function Movie({id,genres,images,name,likes,dislike,releasing}) {
                   <div className='release'>
                     <span>Releasing On : </span>
                     <insert>{releasing}</insert>
-                  </div>
+                  </div>  
                   <div className='fav'>
                         <div className='like'>
                              {/* <img src={process.env.PUBLIC_URL+"/tomato.png"}  /> */}
@@ -49,7 +49,7 @@ function Movie({id,genres,images,name,likes,dislike,releasing}) {
                            {/* <AiFillLike fontSize={"22px"} name={"like"}  color={like.like?"red":"whitesmoke"} onClick={(e)=>{onLike(e)}}/>
                            <AiFillDislike cursor={"pointer"} fontSize={"22px"} name={"dislike"} color={"whitesmoke"} onClick={(e)=>{onLike(e)}} /> */}
                       </div>
-                      <div className='op'>
+                      <div className='op trailer'>
                         <a href="https://www.youtube.com/" target={"_blank"}>Watch Trailer</a>
                       </div>
                   </div>
