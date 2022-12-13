@@ -16,7 +16,8 @@ const Booking = new mongoose.Schema({
         },
         createdBy:{
             type:mongoose.Schema.Types.ObjectId,
-            ref:"users"
+            ref:"users",
+            required:true,
         }
 })
 module.exports = mongoose.model("bookings",Booking)

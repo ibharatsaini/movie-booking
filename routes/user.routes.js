@@ -10,11 +10,17 @@ router.route("/login")
       .post(userController.login)
 
 
-router.route("/update")
+router.route("/update/email")
       .post(
              [authenticateUser],
              userController.updateUser
             )
+
+router.route("/update/password")
+      .post(
+            [authenticateUser],
+            userController.updatePassword
+      )
 
 router.route("/me")
       .get(
@@ -25,6 +31,8 @@ router.route("/me")
             userController.getUser
            )
 
+router.route("/bookings")
+      .get([authenticateUser] , userController.getShow)
 
 
 module.exports = router

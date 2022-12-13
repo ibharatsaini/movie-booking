@@ -8,7 +8,7 @@ import ticketBg from "../../images/ticket-bg01.jpg"
 import City from "../../images/city.png"
 function Search() {
   const navigagte = useNavigate()
-  const [release,setRelase] = useState("all")
+  const [release,setRelase] = useState('')
   const [keyword,setKeyword] = useState("")
   const [result,setResult] = useState([])
   function submitSearch(e){
@@ -19,9 +19,9 @@ function Search() {
   function handleChange(e){
     setRelase(e.target.value)
     const url = new URLSearchParams(window.location.search)
-
+     
     e.target.value =='all' ? url.delete('releasing') : url.set('releasing',e.target.value)
-    window.location.href = `/movies/filter?`+url
+    navigagte(`/movies/filter?`+url)
   }
   useEffect(()=>{
        console.log(result)

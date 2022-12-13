@@ -5,6 +5,7 @@ import "./checkout.css"
 import Loader from '../Loader/Loader'
 import { useNavigate } from 'react-router-dom'
 import Banner04 from '../../images/banner04.jpg'
+import toast from 'react-hot-toast'
 function Checkout() {
     const cart = useSelector(state=>state.cart)
     const userData = useSelector(state=>state.user)
@@ -31,13 +32,17 @@ function Checkout() {
             if(data.success){
                 console.log('done')
                 setLoad(prev=>({...prev,tixLoad:false}))
+                toast.success("Tickets Booked Successfully!!")
 
                 
             }else{
-                console.log('not done')
+                toast.error("Couldn't Book Tickets!")
             }
             
-        }).catch(e=>setLoad(prev=>({...prev,tixLoad:false}))).finally(()=>navigate("/"))
+        }).catch(e=>{
+            setLoad(prev=>({...prev,tixLoad:false}));
+            toast.error("Couldn't Book Tickets!")
+        }).finally(()=>navigate("/"))
         setLoad(prev=>({...prev,tixLoad:true}))
 
         // setTimeout(()=>{setLoad(prev=>({...prev,tixLoad:false}))},[3000])

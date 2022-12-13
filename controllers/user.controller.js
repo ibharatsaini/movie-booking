@@ -4,6 +4,7 @@ const inputValidate = require("../helpers/inputValidator")
 const AppError = require("../helpers/errorHandler")
 const catchAsyncError = require("../helpers/catchAsyncError")
 const sendToken = require("../helpers/sendToken")
+const ShowModel = require("../models/Show.model")
 
 
 
@@ -63,6 +64,47 @@ const updateUser = async(req,res)=>{
            })
 }
 
+const updatePassword = async(req,res,next)=>{
+    console.log(req.body)
+    const user = await crudOperations(User).getOne(req.user._id,['+password'])
+    if(!user) return res.status(404).json({success:false,error:"Error not found"})
+    console.log(user)
+    const isMatched = await user.comparePassword(req.body.oldPassword)
+    console.log(isMatched)
+    if(!isMatched){
+        console.log('compare')
+        return next(new AppError(404, "Passowrd Don't Match"))
+    }
+    if(user.newPassword != user.oldPassword){
+        console.log('oldpassowrd')
+        return next(new AppError(404,"Password Don't Match"))
+    }
+    user.password = req.body.newPassword
+    await user.save()
+    console.log(user)
+    sendToken(user,res)
+}
+const getShow = async(req,res) =>{
+        const user = await User.findById(req.user._id).populate({
+                                                                    path: "bookings",
+                                                                    populate: {
+                                                                        path:"booking",
+                                                                        model: "Bookings",
+                                                                        populate:{
+                                                                            path:"show",
+                                                                            model:"shows",
+                                                                            select:"_id movieName language start screen date cinema"
+                                                                        }
+                                                                    }
+                                                                })
+
+        if(!user) return res.status(404).json({success:false,error:"No Bookings Found"})
+        return res.status(200).json({
+            success:true,
+            data:user
+        })
+}
+
 const getUser = async(req,res)=>{
     console.log(req.user)
     const user =await crudOperations(User).getById(req.user._id)
@@ -80,5 +122,7 @@ module.exports = {
     registerUser    : catchAsyncError(registerUser),
     updateUser      :   catchAsyncError(updateUser),
     getUser         :      catchAsyncError(getUser),
-    login           :        catchAsyncError(login)
+    login           :        catchAsyncError(login),
+    getShow         :       catchAsyncError(getShow),
+    updatePassword  :catchAsyncError(updatePassword),
 }

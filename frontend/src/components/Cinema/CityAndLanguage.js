@@ -2,20 +2,18 @@ import React,{useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
 import { RiArrowDropDownLine } from 'react-icons/ri'
 import { useDispatch } from 'react-redux'
-import {  useNavigate, useParams } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import "./cinema.css"
 import {  updateFilters } from '../../reduxStore/actions/showAction'
 import { updateCinema } from '../../reduxStore/actions/cinemaAction'
 import City from "../../images/city.png"
-function CityAndLanguage() {
+function CityAndLanguage({data}) {
     // console.log(data)
     const navigate = useNavigate()
-    const data = useSelector(state=>state.show)
     const [filter,setFilter]= useState({city:false,language:false,data:false})
     const dispatch = useDispatch()
     const [chosen,setChosen] = useState(data.filters)
     const dates=[6,7,8,9,10,11]
-    // console.log(chosen)
     const cities=['new delhi','lucknow','bhopal']
     // const chosenLanguage
     function showModal(s){

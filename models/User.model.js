@@ -22,7 +22,10 @@ const User = new mongoose.Schema({
     avatar:{type:String},
     bookings:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"bookings"
+        ref:"bookings",
+        select:false
+
+    
     }],
     role:{
         type:String,
@@ -47,6 +50,7 @@ User.pre('save',async function(next){
 
 User.methods.comparePassword = function(password){
         const passwordHash = this.password
+        console.log(password,passwordHash)
         return new Promise((resolve,reject)=>{
             bcrypt.compare(password,passwordHash,function(err,same){
                 if(err) return reject(err)

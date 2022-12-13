@@ -4,6 +4,7 @@ import Search from '../Search/Search'
 import "./movielist.css"
 import { useDispatch } from 'react-redux'
 import Movie from '../Movie/Movie'
+import { useLocation } from 'react-router-dom'
 function MovieList() {
         const dispatch = useDispatch()
         const [form,setForm] = useState({
@@ -15,7 +16,9 @@ function MovieList() {
         // function updateLang(e){ 
         //     dispatch(updatelanguage({language:e.target.value}))
         // }
+        const location =  useLocation()
         useEffect(()=>{
+            console.log(window.location.href)
             const url = new URLSearchParams(window.location.search)
             const filter = {}
             url.forEach((v,k)=>{filter[k]=v})

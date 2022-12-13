@@ -22,7 +22,7 @@ function Shows() {
                     <Link style={{textDecoration:'none',color:'black',padding:'20px',margin: 'auto',background: 'aliceblue'}} to='/'>Go to Home Page</Link>
                     </div>)
   }
-
+  console.log(data,cinema)
 
   return (cinema.cinemas.length==0 || data.movie?.name?.length<1 || data.filters?.name?.length<1) ? (<PageLoading />)
             :

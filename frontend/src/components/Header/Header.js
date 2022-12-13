@@ -1,32 +1,41 @@
 import "./header.css"
 // import logo from "../../logo.png"
 import React,{useState} from 'react'
-import { Link, useLocation } from "react-router-dom"
+import { Link, useNavigate, useLocation } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { logoutUser } from "../../reduxStore/actions/userAction"
 import Logo from "../../images/logo.png"
 import Avatar from "../../images/avatar.png"
+import toast from "react-hot-toast"
 
 
 function Header() {
   const dispatch = useDispatch()
   const location = useLocation()
+  const navigate = useNavigate()
   const userData = useSelector(state=>state.user)
   const [visible,setVisible] =  useState(false)
   if(location.pathname == ('/join-us') || location.pathname == '/login' ){
     return null
   }
+  
+
   function checkProfile(){
     console.log('checl')
     setVisible(prev=>!prev)
-    console.log(visible )
-
+    console.log(visible)
   }
   function logout(){
     console.log('logout')
     localStorage.clear()
-      dispatch(logoutUser())
-      console.log(userData)
+    dispatch(logoutUser())
+    
+    const matched = ['/show/' , '/checkout' ,'/my-account'].some(el=>location.pathname.includes(el))
+    toast.success("Logged Out!")
+    if(matched){
+       navigate("/")
+    }
+
       // return (<Navigate replace to="/" />)
   }
   // if(userData.isAuthenticated)

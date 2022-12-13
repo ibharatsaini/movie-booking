@@ -76,6 +76,8 @@
     cursor: pointer;
     padding: 10px 20px;
     border-radius: 20px;
+    width: 80px;
+    text-align: center;
 }
 .already{
      margin: 10px auto;

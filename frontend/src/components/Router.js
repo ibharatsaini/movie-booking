@@ -1,5 +1,6 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom'
+import {Toaster} from 'react-hot-toast'
 import Header from './Header/Header'
 import Home from './Home/Home'
 import MovieDetail from './MovieDetail/MovieDetail'
@@ -10,6 +11,7 @@ import Show from './Show/Show'
 import Checkout from './Checkout/Checkout'
 import Login from './Join/Login'
 import SignUp from './Join/SignUp'
+import Profile from './Profile/Profile'
 // impo
 
 function Router() {
@@ -22,13 +24,15 @@ function Router() {
                         } />
                 </Routes> */}
                  <Header />
+                 <Toaster />
+                 
                 <Routes> 
 
                     <Route path="/join-us" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
                     
                     <Route path="/" element={<Home />} />
-                    {/* <Route path="/search" element={<MovieList />} /> */}
+                    <Route path="/my-account" element={<Profile />} />
                     <Route path="/movies/filter" element={<MovieList />} />
                     <Route path="/movie/:id" element={<MovieDetail />} />
                     <Route path="/cinema/:movieId" element={<Cinema/>} />

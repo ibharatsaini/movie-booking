@@ -9,6 +9,7 @@ async function authenticateUser(req,res,next){
         const {_id} = jwt.verify(token,process.env.JWT_SECRET)
         const user = await crudOperations(User).getById(_id)  
         if(!user)  return res.status(404).json({success:false,error:"User not found"})
+        console.log(user)
         req.user = user
         next()
 }

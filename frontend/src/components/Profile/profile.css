@@ -1,0 +1,126 @@
+#profile{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.infoBook{
+    width: 70%;
+    margin: auto;
+}
+
+
+.infoUser{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.nameRow{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.checkpoint input::placeholder{
+    font-size: 15px;
+}
+.checkpoint{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.checkpoint label{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.checkpoint input{
+    background-color: transparent;
+    outline: none;
+    color: white;
+    height: 20px;
+    border:none;
+    border-bottom: 1px solid #23334f;
+    padding-bottom: 5px;
+}
+
+
+input[name=oldpassword]:focus .newPass{
+    pointer-events: all;
+}
+
+#booking{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+.userBooks{
+    width: 40%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 29.4px 0.6px rgb(0 0 0 / 50%);
+    
+}
+
+.colBoo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.movBoo{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    height: 100%;
+}
+.movBoo h3{
+    /* font-s */
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.movBoo h4{
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #9aace5;
+    margin: 4px 0px;
+}
+.end h3{
+    margin-left: auto;
+}
+.end h4{
+    margin-left: auto;
+}
+.changePass{
+    background-image: linear-gradient(169deg, #5560ff 17%, #aa52a1 63%, #ff4343 100%);
+    width: 150px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 25px;
+    cursor: pointer;
+}
+@media screen and (max-width:500px) {
+    .nameRow{
+        flex-direction: column;
+    }
+    .nameRow .checkpoint{
+        width: 100%;
+        margin: 10px 0px;
+    }
+    
+}

@@ -2,14 +2,17 @@ const catchAsyncError = require("../helpers/catchAsyncError")
 const crudOperations = require("../helpers/crudOperations")
 const Booking = require("../models/Booking.model")
 const ShowModel = require("../models/Show.model")
-
+const User = require("../models/User.model")
 
 const createBooking = async(req,res,next)=>{
     console.log(req.body)
     const show = await crudOperations(ShowModel).getById(req.body.booking.show)
     console.log(show)
     if(!show) return res.status(404).json({success:false,error:"Show wasn't found"})
-    const booking = await crudOperations(Booking).createOne({...req.body,booking:{...req.body.booking,show:show._id}})
+    const booking = await crudOperations(Booking).createOne({...req.body,createdBy:req.user._id,booking:{...req.body.booking,show:show._id}})
+    req.user  = await crudOperations(User).updateById(req.user._id,{$push:{bookings:booking._id}})
+    show.seatsBooked = [...show.seatsBooked , ...req.body.booking.seatsBooked]
+    await show.save()
     console.log(booking)
     if(!booking) return res.status(404).json({success:false,error:"Couldn't create the booking"})
     return res.status(200)
