@@ -30,6 +30,7 @@ app.use("/api/v1/booking",bookRoutes)
 
 //static
 if(process.env.NODE_ENV=='production'){
+    console.log('production running')
     const path = require('path');
 
     app.use(express.static(path.join(__dirname,"./frontend/build")))
