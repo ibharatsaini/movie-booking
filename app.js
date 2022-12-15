@@ -29,30 +29,30 @@ app.use("/api/v1/booking",bookRoutes)
 
 
 //static
-if(process.env.NODE_ENV=='production'){
-    console.log('production running')
-    const path = require('path');
+// if(process.env.NODE_ENV=='production'){
+//     console.log('production running')
+//     const path = require('path');
 
-    app.use(express.static(path.join(__dirname,"./frontend/build")))
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'),function (err){
-          res.status(500).json({success:false,error:"route not resolved"})
-        })
-      });
-}
+//     app.use(express.static(path.join(__dirname,"./frontend/build")))
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'),function (err){
+//           res.status(500).json({success:false,error:"route not resolved"})
+//         })
+//       });
+// }
 
 
 //error handling
 app.use(error)
 
-const database = require("./database")
+// const database = require("./database")
 
 
-const PORT  = process.env.PORT  || 8080
-app.listen(PORT,()=>{
-    console.log("Server listening ", PORT)
-    database()
-})
+// const PORT  = process.env.PORT  || 8080
+// app.listen(PORT,()=>{
+//     console.log("Server listening ", PORT)
+//     database()
+// })
 
 
 
