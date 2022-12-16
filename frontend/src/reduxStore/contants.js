@@ -1,0 +1,1 @@
+export const backendUrl = "https://movie-booking-backend.onrender.com"

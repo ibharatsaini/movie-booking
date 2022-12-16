@@ -1,3 +1,4 @@
+import { backendUrl } from "../contants"
 
 const FETCHED_CINEMA='FETCHED_CINEMA'
 const LOAD_CINEMA='LOAD_CINEMA'
@@ -30,7 +31,7 @@ export const updateCinema  = (data)=>async (dispatch)=>{
     try{
         console.log(data)
         dispatch(loadCinema(data))
-        const cinema  = await(await fetch(`/api/v1/cinema/city/${data}`)).json()
+        const cinema  = await(await fetch(`${backendUrl}/api/v1/cinema/city/${data}`)).json()
         if(!cinema.success) return dispatch(errorCinema(cinema.error))
         dispatch(fetchedCinema(cinema.data))
     }catch(e){

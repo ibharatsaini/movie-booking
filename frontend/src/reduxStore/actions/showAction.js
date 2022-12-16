@@ -1,3 +1,5 @@
+import { backendUrl } from "../contants"
+
 const  UPDATE_FILTERS   =  'UPDATE_FILTERS'
 const  FETCHED_SHOW     =  'FETCHED_SHOWS'
 // const  UPDATE_SHOW    =  'UPDATE_SHOW'
@@ -43,7 +45,7 @@ export const addMovie = (data)=>{
 export const updateShow = (data) => async(dispatch) =>{
     try{
         // dispatch(updateFilters(data))
-        const shows=await ( await fetch(`/api/v1/show/${data.movieId}/cinema/${data.cinema}?language=${data.language}&date=${data.date}&time=${data.time}`)).json()
+        const shows=await ( await fetch(`${backendUrl}/api/v1/show/${data.movieId}/cinema/${data.cinema}?language=${data.language}&date=${data.date}&time=${data.time}`)).json()
         // shows = await shows.json()
         if(!shows.success) return dispatch(errorShow(shows.error))
         dispatch(fetchedShow(shows.data))
@@ -55,7 +57,7 @@ export const updateShow = (data) => async(dispatch) =>{
 
 export const updateMovie=(data)=>async(dispatch)=>{
     try{
-        const movie = await (await fetch(`/api/v1/movie/${data}`)).json()
+        const movie = await (await fetch(`${backendUrl}/api/v1/movie/${data}`)).json()
         if(!movie.success) return dispatch(errorShow(true))
         dispatch(addMovie(movie.data))
     }catch(e){

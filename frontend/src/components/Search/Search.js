@@ -6,6 +6,7 @@ import {BsSearch} from "react-icons/bs"
 import ticketTab from "../../images/ticket-tab01.png"
 import ticketBg from "../../images/ticket-bg01.jpg"
 import City from "../../images/city.png"
+import { backendUrl } from '../../reduxStore/contants'
 function Search() {
   const navigagte = useNavigate()
   const [release,setRelase] = useState('')
@@ -25,7 +26,7 @@ function Search() {
   }
   useEffect(()=>{
        console.log(result)
-       keyword.length>0 && fetch(`/api/v1/movie/search?keyword=${keyword}`)
+       keyword.length>0 && fetch(`${backendUrl}/api/v1/movie/search?keyword=${keyword}`)
             .then(data=>data.json())
             .then(data=>setResult(data.data))
             .catch(e=>console.log(e))

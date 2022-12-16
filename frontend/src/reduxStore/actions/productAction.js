@@ -1,3 +1,5 @@
+import { backendUrl } from "../contants"
+
 const PRODUCT_ADD = 'PRODUCT_ADD'
 const LOAD_PRODUCT = 'LOAD_PRODUCT'
 const ERROR_PRODUCT = 'ERROR_PRODUCT'
@@ -25,5 +27,5 @@ export const errorProduct =(data)=>{
 
 
 export const getProduct = (data)=async (dispatch)=>{
-    const product = await(await fetch("/api/v1/product/"))
+    const product = await(await fetch(`${backendUrl}/api/v1/product/`))
 }
