@@ -11,6 +11,7 @@ import Cake from "../../images/cake.png"
 import Amazon from "../../images/amazon.png"
 import Paypal from "../../images/paypal.png"
 import PageLoading from '../PageLoading/PageLoading'
+import { backendUrl } from '../../reduxStore/contants'
 
 function MovieDetail() {
   const navigate = useNavigate()
@@ -20,7 +21,7 @@ function MovieDetail() {
   useEffect(()=>{
         const id=window.location.href.split("movie/")[1]
         console.log(id)
-        fetch(`/api/v1/movie/${id}`)
+        fetch(`${backendUrl}/api/v1/movie/${id}`)
             .then(data=>data.json())
             .then(data=>setData(prev=>({...prev,...data.data})))
   },[])

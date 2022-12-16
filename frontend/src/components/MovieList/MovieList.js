@@ -5,6 +5,7 @@ import "./movielist.css"
 import { useDispatch } from 'react-redux'
 import Movie from '../Movie/Movie'
 import { useLocation } from 'react-router-dom'
+import { backendUrl } from '../../reduxStore/contants'
 function MovieList() {
         const dispatch = useDispatch()
         const [form,setForm] = useState({
@@ -29,7 +30,7 @@ function MovieList() {
                     [k]:{...prev[k],[filter[k]]:true}
                 }))
             }
-            fetch(`/api/v1/movie/filter?${url}`)
+            fetch(`${backendUrl}/api/v1/movie/filter?${url}`)
                 .then(data=>data.json())
                 .then(data=>setMovie(data.data)) 
 

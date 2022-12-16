@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useSelector ,useDispatch} from 'react-redux'
 import { updateUser } from '../../reduxStore/actions/userAction'
+import { backendUrl } from '../../reduxStore/contants'
 import Loader from "../Loader/Loader"
 import PageLoading from '../PageLoading/PageLoading'
 import "./profile.css"
@@ -13,7 +14,7 @@ function Profile() {
     const [update,setUpdate] = useState({oldPassword:"",newPassword:"",confirmPassword:""})
     useEffect(()=>{
            
-           fetch("/api/v1/user/bookings")
+           fetch(`${backendUrl}/api/v1/user/bookings`)
                 .then(data=>data.json())
                 .then(data=>{
                     dispatch(updateUser(data.data))
@@ -38,7 +39,7 @@ function Profile() {
         console.log(update)
 
         setLoading(true)
-        fetch("/api/v1/user/update/password",{
+        fetch(`${backendUrl}/api/v1/user/update/password`,{
             method:"POST",
             body:JSON.stringify({...update}),
             headers:{
