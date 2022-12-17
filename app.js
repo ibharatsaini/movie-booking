@@ -29,18 +29,18 @@ app.use("/api/v1/booking",bookRoutes)
 
 
 //static
-if(process.env.NODE_ENV=='production'){
-    console.log('production running')
-    const path = require('path');
+// if(process.env.NODE_ENV=='production'){
+console.log('production running')
+const path = require('path');
 
-    app.use(express.static(path.join(__dirname,"./frontend/build")))
-    app.get('*', (req, res) => {
-       return  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'),function (err){
-        //   res.status(500).json({success:false,error:"route not resolved"})
-        console.log('error')
-        })
-      });
-}
+app.use(express.static(path.join(__dirname,"./frontend/build")))
+app.get('*', (req, res) => {
+    return  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'),function (err){
+    //   res.status(500).json({success:false,error:"route not resolved"})
+    console.log('error')
+    })
+});
+// }
 
 
 //error handling
