@@ -35,8 +35,9 @@ if(process.env.NODE_ENV=='production'){
 
     app.use(express.static(path.join(__dirname,"./frontend/build")))
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'),function (err){
-          res.status(500).json({success:false,error:"route not resolved"})
+       return  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'),function (err){
+        //   res.status(500).json({success:false,error:"route not resolved"})
+        console.log('error')
         })
       });
 }
