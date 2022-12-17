@@ -34,14 +34,8 @@ console.log('production running')
 const path = require('path');
 
 app.use(express.static(path.join(__dirname,"./frontend/build")))
-app.get('/*', (req, res) => {
-     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'),function (_,err){
-    //   res.status(500).json({success:false,error:"route not resolved"})
-      if(err){
-             console.log('error')
-
-      }
-    })
+app.get('/', (req, res) => {
+     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'))
 });
 // }
 
