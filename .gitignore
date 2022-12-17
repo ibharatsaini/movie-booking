@@ -3,4 +3,4 @@ package-lock.json
 .env
 frontend/node_modules
 frontend/package-lock.json
-frontend/build
+frontend
