@@ -45,14 +45,14 @@ if(process.env.NODE_ENV=='production'){
 //error handling
 app.use(error)
 
-const database = require("./database")
+// const database = require("./database")
 
 
-const PORT  = process.env.PORT  || 8080
-app.listen(PORT,()=>{
-    console.log("Server listening ", PORT)
-    database()
-})
+// const PORT  = process.env.PORT  || 8080
+// app.listen(PORT,()=>{
+//     console.log("Server listening ", PORT)
+//     database()
+// })
 
 
 
