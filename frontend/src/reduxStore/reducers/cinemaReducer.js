@@ -19,7 +19,7 @@ export function cinemaReducer(state=initialState,action){
         case 'FETCHED_CINEMA':
             return {
                 ...state,
-                loading:true,
+                loading:false,
                 error:false,
                 cinemas:action.payload,
             }

@@ -1,9 +1,17 @@
 const initialState = {
     loading:false,
     shows:[],
-    movie:{},
+    movie:{
+        name:""
+    },
     error:false,
-    filters:{}
+    filters:{
+        city:"new delhi",
+        name:"",
+        language:"",
+        movieId:"",
+        date:""
+    }
 }
 
 export function  showReducer(state=initialState,action){

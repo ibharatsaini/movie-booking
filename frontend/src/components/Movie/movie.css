@@ -61,7 +61,8 @@
     color: whitesmoke;
     text-transform: capitalize;
 }
-.genre insert{
+.genre section{
+    display:inline;
     margin: 10px;
 }
 .release{
@@ -70,7 +71,7 @@
 .release span{
     color: white;
 }
-.release insert{
+.release section{
     color: whitesmoke;
 }
 .tix{

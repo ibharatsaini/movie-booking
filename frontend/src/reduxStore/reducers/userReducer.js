@@ -1,5 +1,13 @@
 import { fetchUser } from "../actions/userAction"
 
+
+type UserData = {
+    firstName:string,
+    lastName:string,
+    email:string,
+    bookings:Object[]
+}
+
 const userInfo = fetchUser()
 
 
