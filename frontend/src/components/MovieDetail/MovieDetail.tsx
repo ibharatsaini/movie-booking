@@ -81,7 +81,7 @@ function MovieDetail() {
       <>
            <div id='mod'>
                 
-                <div className='box'>
+                <div className='boxSS'>
                     <span>Pick Language  <section onClick={closeModal}>Close</section></span>
                     <section className='sectBox'>
                         {/* {data.language.map(el=><Link className='rt' to={`/cinema/${data.name}?city=new delhi&language=${el}&movieId=${data._id}&date=${data.releasing}`}><span>{el}</span></Link>)} */}
