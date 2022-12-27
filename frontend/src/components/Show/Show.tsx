@@ -7,13 +7,15 @@ import { useAppDispatch, useAppSelector } from '../../reduxStore/hooks'
 import { updateShow } from '../../reduxStore/actions/showAction'
 import { updateCart } from '../../reduxStore/actions/cartAction'
 import {TbArmchair} from 'react-icons/tb'
+import {Shows ,ShowStore} from '../../reduxStore/types'
 import '../Cinema/cinema.css'
 import './show.css'
 import PageLoading from '../PageLoading/PageLoading'
+
 function Show() {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-  const data = useAppSelector(state=>state.show)
+  const data:ShowStore = useAppSelector(state=>state.show)
   const alpha = ['H','G','F','E','D','C','B','A']
   const [seats,setSeats]= useState<String[]>([])
   const [total,setTotal] = useState<number>()
@@ -23,7 +25,7 @@ function Show() {
     const params:any={}
     loc.forEach((v,k)=>params[k]=v)
     console.log(params)
-    dispatch(updateShow(params))
+    dispatch(updateShow(params) as any)
   },[window.location.href])
   
   useEffect(()=>{

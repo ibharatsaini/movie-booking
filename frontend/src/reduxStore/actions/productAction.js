@@ -1,8 +1,8 @@
 import { backendUrl } from "../contants"
 
-const PRODUCT_ADD = 'PRODUCT_ADD'
-const LOAD_PRODUCT = 'LOAD_PRODUCT'
-const ERROR_PRODUCT = 'ERROR_PRODUCT'
+export const PRODUCT_ADD = 'PRODUCT_ADD'
+export const LOAD_PRODUCT = 'LOAD_PRODUCT'
+export const ERROR_PRODUCT = 'ERROR_PRODUCT'
 
 export const productAdd = (data)=>{
     return {

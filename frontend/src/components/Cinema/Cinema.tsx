@@ -9,45 +9,41 @@ import {  updateCinema } from '../../reduxStore/actions/cinemaAction'
 import Banner04 from "../../images/banner04.jpg"
 import MovieSeat from "../../images/movie-seat.png"
 import PageLoading from '../PageLoading/PageLoading'
+import {  CinemaStore } from 'reduxStore/types'
+import { ShowStore } from 'reduxStore/types'
+// type Showw = {
+//   loading:Boolean,
+//   shows:Object[],
+//   movie:{
+//     name:string
+//   },
+//   error:Boolean,
+//   filters:{
+//     city:string,
+//     name:string,
+//     language:string,
+//     movieId:string,
+//     date:string
+//   }
+// }
 
-type Showw = {
-  loading:Boolean,
-  shows:Object[],
-  movie:{
-    name:string
-  },
-  error:Boolean,
-  filters:{
-    city:string,
-    name:string,
-    language:string,
-    movieId:string,
-    date:string
-  }
-}
 
-type Cinema = {
-    name:"",
-    _id:''
-
-}
-
-type Cinemas ={
-  loading:Boolean,
-  error:Boolean,
-  cinemas:Cinema[],
-  city:string,
-}
+// type Cinemas ={
+//   loading:Boolean,
+//   error:Boolean,
+//   cinemas:Cinema[],
+//   city:string,
+// }
 
 function Cinema() {
   const dispatch = useAppDispatch()
   console.log('dispatch')
-  const data = useAppSelector<Showw>((state:State)=>state.show)
-  const cinema = useAppSelector<Cinemas>((state:State)=>state.cinema)
+  const data = useAppSelector<ShowStore>((state:State)=>state.show)
+  const cinema = useAppSelector<CinemaStore>((state:State)=>state.cinema)
   const time=[9,15,18]
   console.log(data)
   useEffect(()=>{
-    dispatch(updateCinema(data.filters.city))
+    dispatch(updateCinema(data.filters.city) as any)
   },[data])
   
   if(!data.filters.hasOwnProperty('name')){

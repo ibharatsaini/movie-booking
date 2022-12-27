@@ -32,7 +32,7 @@ function Login() {
     
     function submit(){
     //   console.log(sign)
-       dispatch(loginUser(login))
+       dispatch(loginUser(login) as any)
     //    setLoading(true)
     }
     useEffect(()=>{

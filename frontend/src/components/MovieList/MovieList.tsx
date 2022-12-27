@@ -5,7 +5,6 @@ import "./movielist.css"
 import { useDispatch } from 'react-redux'
 import Movie from '../Movie/Movie'
 import { useLocation } from 'react-router-dom'
-import { backendUrl } from '../../reduxStore/contants'
 
 type FormInclude =  {
     language:{
@@ -52,7 +51,7 @@ function  MovieList() {
                     [k]:{...prev[k],[filter[k]]:true}
                 }))
             }
-            fetch(`${backendUrl}/api/v1/movie/filter?${url}`)
+            fetch(`/api/v1/movie/filter?${url}`)
                 .then(data=>data.json())
                 .then(data=>setMovie(data.data)) 
 

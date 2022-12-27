@@ -12,7 +12,6 @@ import Cake from "../../images/cake.png"
 import Amazon from "../../images/amazon.png"
 import Paypal from "../../images/paypal.png"
 import PageLoading from '../PageLoading/PageLoading'
-import { backendUrl } from '../../reduxStore/contants'
 
 type User = {
     loading:Boolean,
@@ -22,10 +21,10 @@ type User = {
 }
 
 export type Movie = {
-    name:String,
-    _id:String,
+    name:string,
+    _id:string,
     language:String[],
-    releasing:String,
+    releasing:string,
     genre:String[],
     images:string[],
     cast:String[],
@@ -43,7 +42,7 @@ function MovieDetail() {
   useEffect(()=>{
         const id=window.location.href.split("movie/")[1]
         console.log(id)
-        fetch(`${backendUrl}/api/v1/movie/${id}`)
+        fetch(`/api/v1/movie/${id}`)
             .then(data=>data.json())
             .then(data=>setData(prev=>({...prev,...data.data})))
   },[])
@@ -66,8 +65,8 @@ function MovieDetail() {
     // console.log('UPDATE LANGUAGE')
     console.log('name')
     dispatch(updateFilters({name:data.name,movieId:data._id,city:'new delhi',language:l,date:data.releasing}))
-    dispatch(updateMovie(data._id))
-    dispatch(updateCinema('new delhi'))
+    dispatch(updateMovie(data._id) as any)
+    dispatch(updateCinema('new delhi') as any)
     
     console.log(userData.isAuthenticated)
     const url = `/cinema/${data.name.toLowerCase()}?city=new delhi&language=${l}&movieId=${data._id}&date=${data.releasing}`

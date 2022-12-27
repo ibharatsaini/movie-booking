@@ -8,27 +8,7 @@ import "./cinema.css"
 import {  updateFilters } from '../../reduxStore/actions/showAction'
 import { updateCinema } from '../../reduxStore/actions/cinemaAction'
 import City from "../../images/city.png"
-// import {Showw} from './Cinema'
-// type Filter={
-//     city:Boolean,
-//     language:Boolean,
-//     data:Boolean
-// }
-type Showw = {
-    loading:Boolean,
-    shows:Object[],
-    movie:{
-      name:string
-    },
-    error:Boolean,
-    filters:{
-      city:string,
-      name:string,
-      language:string,
-      movieId:string,
-      date:string
-    }
-  }
+
 type Filter ={
     city:string,
     name:string,
@@ -70,7 +50,7 @@ function CityAndLanguage({data}:any) {
         console.log()
         dispatch(updateFilters({...data.filters,[name]:value}))
         if(name=='city'){
-            dispatch(updateCinema(value))
+            dispatch(updateCinema(value) as any)
         }
         // changeChosen(e.target.name,e.target.value)
     }

@@ -82,7 +82,7 @@ function SignUp() {
                         
                     </div>
                     <div className='middle'>
-                           <div onClick={()=>{dispatch(createUser(sign))}} className='submitButton'>
+                           <div onClick={()=>{dispatch(createUser(sign) as any)}} className='submitButton'>
                                {userData.loading ? <Loader /> : "Sign Up"}
                                      
                            </div>

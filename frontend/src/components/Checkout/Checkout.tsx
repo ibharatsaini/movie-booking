@@ -7,7 +7,6 @@ import Loader from '../Loader/Loader'
 import { useNavigate } from 'react-router-dom'
 import Banner04 from '../../images/banner04.jpg'
 import toast from 'react-hot-toast'
-import { backendUrl } from '../../reduxStore/contants'
 
 type Address  = {
     first:string,
@@ -40,7 +39,7 @@ function Checkout() {
         setAddress(prev=>({...prev,[name]:value}))
     }
     function bookTix(){
-        fetch(`${backendUrl}/api/v1/booking/create`,{
+        fetch(`/api/v1/booking/create`,{
             method:"POST",
             body:JSON.stringify({booking:{show:cart.show._id,seatsBooked:cart.seats},totalAmount:totalPrice}),
             headers:{
