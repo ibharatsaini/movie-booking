@@ -59,17 +59,7 @@ function  MovieList() {
         function updateForm(e:any,k:any){
                 console.log(e.target.checked)
                 const url = new URLSearchParams(window.location.search)
-                // let inpFilt= document.querySelectorAll(`#${k} [type='checkbox']`)
-                // let inpFilt= Array.from(document.querySelectorAll(`#${k} [type='checkbox']`)) 
-                // console.log(inpFilt[0].checked=true)
-                // for(let d of inpFilt){
-                //     console.log(d)
-                //     d.checked=true
-                // }
-                // Object.keys(form[k]).forEach()
-                
-                
-                // console.log(inpFilt?.querySelectorAll("[type='checkbox']")[0])
+
              
                 console.log(e.target.name,k)
                 // setForm(prev=>({
