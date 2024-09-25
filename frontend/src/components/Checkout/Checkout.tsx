@@ -7,10 +7,7 @@ import Loader from '../Loader/Loader'
 import { useNavigate } from 'react-router-dom'
 import Banner04 from '../../images/banner04.jpg'
 import toast from 'react-hot-toast'
-<<<<<<< HEAD:frontend/src/components/Checkout/Checkout.js
-import { backendUrl } from '../../reduxStore/contants'
 
-=======
 
 type Address  = {
     first:string,
@@ -28,7 +25,6 @@ type User = {
     user:Object,
     isAuthenticated:Boolean
 }
->>>>>>> e19d64e4c99cfd74cb0a1eebbe252d41346d6527:frontend/src/components/Checkout/Checkout.tsx
 function Checkout() {
     const cart = useAppSelector(state=>state.cart)
     const userData = useAppSelector<User>(state=>state.user)

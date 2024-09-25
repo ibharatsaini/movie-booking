@@ -56,29 +56,6 @@ function  MovieList() {
                 .then(data=>setMovie(data.data)) 
 
         },[window.location.href])
-<<<<<<< HEAD:frontend/src/components/MovieList/MovieList.js
-        function updateForm(e,k){
-            console.log(form)
-            const url = new URLSearchParams(window.location.search)
-          
-            // setForm(prev=>({
-            //   ...prev,
-            //   [k]:{[[k][!e.target.name]]:false,[e.target.name]:!prev[k][e.target.name]}
-            // }))
-            setForm(prev=>{
-                const oj={...prev}
-                Object.keys(oj[k]).forEach((key)=>{
-                    console.log(key)
-                     key==e.target.name?oj[k][key]=!oj[k][key]:oj[k][key]=false
-                })
-                console.log(prev,oj)
-                return {...prev,...oj}
-            })
-            
-            // url.set(k,e.target.value)
-            e.target.checked ? url.set(k,e.target.value) : url.delete(k)
-            window.history.replaceState({}, '', `/movies/filter?${url}`);
-=======
         function updateForm(e:any,k:any){
                 console.log(e.target.checked)
                 const url = new URLSearchParams(window.location.search)
@@ -126,7 +103,6 @@ function  MovieList() {
                 // url.set(k,e.target.value)
                 e.target.checked ? url.set(k,e.target.value) : url.delete(k)
                 window.history.replaceState({}, '', `/movies/filter?${url}`);
->>>>>>> e19d64e4c99cfd74cb0a1eebbe252d41346d6527:frontend/src/components/MovieList/MovieList.tsx
 
 
           }
