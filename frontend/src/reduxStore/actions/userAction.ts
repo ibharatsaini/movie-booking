@@ -85,7 +85,7 @@ export const loginUser = (data:Object):ThunkAction<void, UserStore, unknown , Ac
 }
 
 
-export const logout = (data)=>(dispatch)=>{
+export const logout = (data:any)=>(dispatch:any)=>{
     localStorage.clear();
     dispatch(logoutUser())
     
