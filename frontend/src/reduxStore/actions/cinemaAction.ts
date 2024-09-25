@@ -1,4 +1,4 @@
-import { CinemaActionTypes, CinemaStore } from "reduxStore/types"
+import { CinemaStore } from "reduxStore/types"
 import { ThunkAction } from "redux-thunk"
 import { Action } from "redux"
 
