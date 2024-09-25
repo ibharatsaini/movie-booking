@@ -7,13 +7,13 @@ const deleteById = (model)=>async(id)=>model.findByIdAndDelete({_id:id})
 const deleteOne =(model)=>async(params)=>model.findOneAndRemove(params)
 
 const crudOperations=(model)=>({
-    createOne:createOne(model),
-    getById:getById(model),
-    updateById:updateById(model),
-    getAll:getAll(model),
-    deleteById:deleteById(model),
-    deleteOne:deleteOne(model),
-    getOne: getOne(model)
+    createOne  : createOne(model),
+    getById    :   getById(model),
+    updateById :updateById(model),
+    getAll     :    getAll(model),
+    deleteById :deleteById(model),
+    deleteOne : deleteOne(model),
+    getOne:    getOne(model)
 })
 
 module.exports= crudOperations

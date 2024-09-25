@@ -81,3 +81,11 @@ export const loginUser = (data)=>async(dispatch)=>{
     console.log(user.data)
     return dispatch(updateUser(user.data))
 }
+
+
+export const logout = (data)=>(dispatch)=>{
+    localStorage.clear();
+    dispatch(logoutUser())
+    
+
+}

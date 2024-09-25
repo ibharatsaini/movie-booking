@@ -26,15 +26,7 @@ function SignUp() {
         }
         userData.error && toast.error("Couldn't Sign Up")
       },[userData])
-    // function submit(){
-    //   console.log(sign)
-    //    dispatch(createUser(sign))
-
-    // }
-    // console.log(userData)
-    // if(userData?.isAuthenticated){
-    //   return (<Navigate replace to="/" />)
-    // }
+   
     return (
       <>
       <div style={{backgroundImage:`url(${Background})`}} className='backBanner'>

@@ -12,6 +12,7 @@ function Search() {
   const [release,setRelase] = useState('')
   const [keyword,setKeyword] = useState("")
   const [result,setResult] = useState([])
+  
   function submitSearch(e){
         if(result.length ==0 ) return 
 

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import Banner04 from '../../images/banner04.jpg'
 import toast from 'react-hot-toast'
 import { backendUrl } from '../../reduxStore/contants'
+
 function Checkout() {
     const cart = useSelector(state=>state.cart)
     const userData = useSelector(state=>state.user)
